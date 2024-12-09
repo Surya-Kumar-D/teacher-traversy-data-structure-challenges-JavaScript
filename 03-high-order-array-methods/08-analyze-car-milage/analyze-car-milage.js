@@ -7,7 +7,12 @@ function analyzeCarMileage(cars) {
     (el) => el.mileage === Math.min(...cars.map((el) => el.mileage))
   );
   const averageMileage = totalMileage / cars.length;
-  return { averageMileage, highestMileageCar, lowestMileageCar, totalMileage };
+  return {
+    averageMileage: parseFloat(averageMileage.toFixed(2)),
+    highestMileageCar,
+    lowestMileageCar,
+    totalMileage,
+  };
 }
 
 module.exports = analyzeCarMileage;
